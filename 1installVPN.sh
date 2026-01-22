@@ -13,7 +13,7 @@ echo "Updating package lists..."
 apt update
 
 echo "installing vmwaretools on the VM..."
-apt-get install open-vm-tools open-vm-tooks-dekstop
+apt-get install open-vm-tools open-vm-tooks-dekstop net-tools git 
 
 echo "Upgrading installed packages..."
 apt upgrade -y
