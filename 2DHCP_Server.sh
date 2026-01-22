@@ -1,12 +1,14 @@
 #!/bin/bash
 set -e
 
-echo "Installing DHCP server..."
+read -p "Enter VMNet2 interface (e.g. eth0,ens34): " INTERFACE
 
 apt update
 apt install -y isc-dhcp-server
 
-INTERFACE="eth1"
+ifconfig INTERFACE down
+ifconfig INTERFACE 192.168.77.1 
+ifconfig INTERFACE up
 
 echo "Configuring DHCP to run on $INTERFACE"
 
